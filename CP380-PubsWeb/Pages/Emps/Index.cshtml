@@ -1,0 +1,32 @@
+﻿@page
+@model CP380_PubsWeb.Pages.Emps.IndexModel
+@{
+}
+<div class="row">
+    <div class="col-12">
+        <h2>View Employees List</h2>
+    </div>
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Employee Name</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var viewEmpList in Model.ViewEmpLists)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(x => viewEmpList.emp_id)</td>
+                    <td>
+                        @Html.DisplayFor(x => viewEmpList.fname)&nbsp;@Html.DisplayFor(x => viewEmpList.lname)
+                    </td>
+                    
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

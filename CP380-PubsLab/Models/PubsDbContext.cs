@@ -11,7 +11,7 @@ namespace CP380_PubsLab.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var dbpath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\pubs.mdf"));
+            var dbpath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\..\\CP380-PubsLab\\pubs.mdf"));
             optionsBuilder.UseSqlServer($"Server=(localdb)\\mssqllocaldb;Integrated Security=true;AttachDbFilename={dbpath}");
         }
        
@@ -48,6 +48,18 @@ namespace CP380_PubsLab.Models
                     sal.title_id
                 });
             });
+
+            //modelBuilder.Entity<Sales>(
+
+            //    );
+            //.HasOne(s => s.Stores)
+            //.WithMany(sl => sl.Sales)
+            //.HasForeignKey(si => si.stor_id);
+
+            //modelBuilder.Entity<Sales>()
+            //   .HasOne(s => s.Titles)
+            //   .WithMany(sl => sl.Sales)
+            //   .HasForeignKey(si => si.title_id);
 
         }
 
